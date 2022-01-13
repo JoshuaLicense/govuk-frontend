@@ -21,16 +21,10 @@
       // We use intentionally uneven padding to make it balanced, this can be
       // removed using the version of the font that has a more common vertical spacing.
       @include govuk-font($size: 16, $weight: bold, $line-height: 1.25);
-      padding-top: 4px;
-      padding-right: 8px;
-      padding-bottom: 1px;
-      padding-left: 8px;
+      padding: 4px 8px 1px;
     } @else {
       @include govuk-font($size: 16, $weight: bold, $line-height: 1);
-      padding-top: 5px;
-      padding-right: 8px;
-      padding-bottom: 4px;
-      padding-left: 8px;
+      padding-top: 5px 8px 4px;
     }
   }
 

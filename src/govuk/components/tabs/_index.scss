@@ -81,10 +81,11 @@
 
         // Compensation for border (otherwise we get a shift)
         margin-bottom: -$border-width;
-        padding-top: govuk-spacing(3) - $border-width;
-        padding-right: govuk-spacing(4) - $border-width;
-        padding-bottom: govuk-spacing(3) + $border-width;
-        padding-left: govuk-spacing(4) - $border-width;
+        padding:
+          govuk-spacing(3) - $border-width
+          govuk-spacing(4) - $border-width
+          govuk-spacing(3) + $border-width
+          govuk-spacing(4) - $border-width;
 
         border: $border-width solid $govuk-border-colour;
         border-bottom: 0;

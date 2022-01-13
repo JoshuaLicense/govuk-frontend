@@ -15,7 +15,7 @@
   @include govuk-not-ie8 { // In IE8, which cannot render WOFF format, we fall back to system fonts
     @include govuk-exports("govuk/helpers/font-faces") {
       @at-root {
-        /*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */ /* stylelint-disable-line scss/comment-no-loud  */
+        /*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */ /* stylelint-disable-line max-line-length, scss/comment-no-loud  */
         @font-face {
           font-family: "GDS Transport";
           font-style: normal;

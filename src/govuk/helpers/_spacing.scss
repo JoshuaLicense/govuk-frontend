@@ -34,18 +34,18 @@
 
   $actual-input-type: type-of($spacing-point);
   @if $actual-input-type != "number" {
-    @error "Expected a number (integer), but got a "
-    + "#{$actual-input-type}.";
+    @error "Expected a number (integer), but got a " + "#{$actual-input-type}.";
   }
 
   $is-negative: false;
-  @if ($spacing-point < 0) {
+  @if $spacing-point < 0 {
     $is-negative: true;
     $spacing-point: abs($spacing-point);
   }
 
   @if not map-has-key($govuk-spacing-points, $spacing-point) {
-    @error "Unknown spacing variable `#{$spacing-point}`. Make sure you are using a point from the spacing scale in `_settings/spacing.scss`.";
+    @error "Unknown spacing variable `#{$spacing-point}`. Make sure you are using a point from the spacing " +
+      "scale in `_settings/spacing.scss`.";
   }
 
   $value: map-get($govuk-spacing-points, $spacing-point);
@@ -71,7 +71,13 @@
 ///
 /// @access private
 
-@mixin _govuk-responsive-spacing($responsive-spacing-point, $property, $direction: "all", $important: false, $adjustment: false) {
+@mixin _govuk-responsive-spacing(
+  $responsive-spacing-point,
+  $property,
+  $direction: "all",
+  $important: false,
+  $adjustment: false
+) {
 
   $actual-input-type: type-of($responsive-spacing-point);
   @if $actual-input-type != "number" {
@@ -94,12 +100,12 @@
   // Loop through each breakpoint in the map
   @each $breakpoint, $breakpoint-value in $scale-map {
 
-    @if ($adjustment) {
+    @if $adjustment {
       $breakpoint-value: $breakpoint-value + $adjustment;
     }
 
     // The 'null' breakpoint is for mobile.
-    @if $breakpoint == null {
+    @if not $breakpoint {
 
       @if $direction == all {
         #{$property}: $breakpoint-value if($important, !important, null);
