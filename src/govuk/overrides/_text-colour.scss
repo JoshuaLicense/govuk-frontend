@@ -1,0 +1,10 @@
+// stylelint-disable declaration-no-important
+@import "../settings/colours-palette";
+
+@include govuk-exports("govuk/overrides/text-colour") {
+  @each $name, $colour in $govuk-colours {
+    .govuk-\!-text-colour-#{$name} {
+      color: $colour !important;
+    }
+  }
+}

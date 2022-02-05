@@ -1,0 +1,10 @@
+// stylelint-disable declaration-no-important
+@import "../settings/colours-palette";
+
+@include govuk-exports("govuk/overrides/background-colour") {
+  @each $name, $colour in $govuk-colours {
+    .govuk-\!-background-colour-#{$name} {
+      background-color: $colour !important;
+    }
+  }
+}
